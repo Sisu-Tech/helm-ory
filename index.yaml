@@ -50,6 +50,43 @@ entries:
     urls:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/hydra-0.61.0/hydra-0.61.0.tgz
     version: 0.61.0
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-04-08T14:03:37.654746915Z"
+    dependencies:
+    - alias: ory
+      name: ory-commons
+      repository: file://../ory-commons
+      version: 0.1.0
+    - alias: hydra-maester
+      condition: maester.enabled
+      name: hydra-maester
+      repository: file://../hydra-maester
+      version: 0.61.0
+    description: A Helm chart for deploying ORY Hydra in Kubernetes
+    digest: 415433aa0bad675abcf3c8ef853a46cc56e741d38c9cf431c7ce7e2584a6ff10
+    home: https://www.ory.sh/
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-hydra.svg
+    keywords:
+    - oauth2
+    - openid-connect
+    - openid
+    - oidc
+    - op
+    - api-security
+    - security
+    maintainers:
+    - email: hi@ory.sh
+      name: ORY Team
+      url: https://www.ory.sh/
+    name: hydra
+    sources:
+    - https://github.com/ory/hydra
+    - https://github.com/ory/k8s
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/hydra-0.61.0-2/hydra-0.61.0-2.tgz
+    version: 0.61.0-2
   hydra-maester:
   - apiVersion: v2
     appVersion: v0.0.41
@@ -111,6 +148,22 @@ entries:
     urls:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/kratos-0.61.0/kratos-0.61.0.tgz
     version: 0.61.0
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-04-08T14:03:37.815332982Z"
+    dependencies:
+    - alias: ory
+      name: ory-commons
+      repository: file://../ory-commons
+      version: 0.1.0
+    description: A ORY Kratos Helm chart for Kubernetes
+    digest: b976d13f0a3ab717cbcc528ab074725875947535049580de849f99292ad01dad
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-kratos.svg
+    name: kratos
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/kratos-0.61.0-2/kratos-0.61.0-2.tgz
+    version: 0.61.0-2
   kratos-selfservice-ui-node:
   - apiVersion: v2
     appVersion: v0.13.0-4
@@ -196,4 +249,4 @@ entries:
     urls:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/ory-commons-0.1.0/ory-commons-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-08T11:32:24.126934915Z"
+generated: "2026-04-08T14:03:37.815347253Z"
