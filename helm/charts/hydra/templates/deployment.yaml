@@ -142,19 +142,28 @@ spec:
                   key: dsn
               {{- end }}
             {{- end }}
+            {{- if or .Values.secret.enabled (not (empty .Values.secret.nameOverride)) }}
             - name: SECRETS_SYSTEM
               valueFrom:
                 secretKeyRef:
                   name: {{ include "hydra.secretname" . }}
                   key: secretsSystem
+                  optional: true
             - name: SECRETS_COOKIE
               valueFrom:
                 secretKeyRef:
                   name: {{ include "hydra.secretname" . }}
                   key: secretsCookie
+                  optional: true
+            {{- end }}
             {{- if .Values.deployment.extraEnv }}
               {{- tpl (toYaml .Values.deployment.extraEnv) . | nindent 12 }}
             {{- end }}
+        {{- if .Values.deployment.environmentSecretsName }}
+          envFrom:
+          - secretRef:
+              name: {{ .Values.deployment.environmentSecretsName }}
+        {{- end}}
           resources:
             {{- toYaml .Values.deployment.resources | nindent 12 }}
           {{- if .Values.deployment.securityContext }}
@@ -174,6 +183,11 @@ spec:
         - name: {{ include "hydra.name" . }}-automigrate
           image: "{{ .Values.global.imageRegistry | default .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.deployment.environmentSecretsName }}
+          envFrom:
+            - secretRef:
+                name: {{ .Values.deployment.environmentSecretsName }}
+          {{- end}}
           {{- if .Values.hydra.automigration.customCommand }}
           command: {{- toYaml .Values.hydra.automigration.customCommand | nindent 12 }}
           {{- else }}
