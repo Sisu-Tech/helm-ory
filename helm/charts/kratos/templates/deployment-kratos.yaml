@@ -170,7 +170,7 @@ spec:
                   key: dsn
               {{- end }}
             {{- end }}
-            {{- if not (and (not .Values.secret.enabled) (empty .Values.nameOverride)) }}
+            {{- if or .Values.secret.enabled (not (empty .Values.nameOverride)) }}
             - name: SECRETS_DEFAULT
               valueFrom:
                 secretKeyRef:
