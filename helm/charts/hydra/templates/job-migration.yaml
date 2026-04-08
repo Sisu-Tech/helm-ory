@@ -57,6 +57,11 @@ spec:
       - name: {{ include "hydra.name" $ }}-automigrate
         image: "{{ .Values.global.imageRegistry | default .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- if .Values.deployment.environmentSecretsName }}
+        envFrom:
+          - secretRef:
+              name: {{ .Values.deployment.environmentSecretsName }}
+        {{- end}}
         {{- if .Values.hydra.automigration.customCommand }}
         command: {{- toYaml .Values.hydra.automigration.customCommand | nindent 10 }}
         {{- else }}
