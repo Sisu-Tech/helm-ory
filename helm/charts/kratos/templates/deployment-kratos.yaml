@@ -170,6 +170,7 @@ spec:
                   key: dsn
               {{- end }}
             {{- end }}
+            {{- if or .Values.secret.enabled (not (empty .Values.nameOverride)) }}
             - name: SECRETS_DEFAULT
               valueFrom:
                 secretKeyRef:
@@ -188,6 +189,7 @@ spec:
                   name: {{ include "kratos.secretname" . }}
                   key: secretsCipher
                   optional: true
+            {{- end }}
             {{- if .Values.kratos.config.courier.smtp.connection_uri }}
             - name: COURIER_SMTP_CONNECTION_URI
               valueFrom:
