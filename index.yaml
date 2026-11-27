@@ -3,6 +3,17 @@ entries:
   example-idp:
   - apiVersion: v2
     appVersion: 26.2.0
+    created: "2026-11-27T12:37:37.716488699Z"
+    description: A Helm chart for deploying the reference implementation for the User
+      Login and Consent Flow in Kubernetes
+    digest: dff8bd9e78d4ed413fea112c536934686b9fb52c82a3dcfa9779b0f8318b888f
+    name: example-idp
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/example-idp-0.64.0/example-idp-0.64.0.tgz
+    version: 0.64.0
+  - apiVersion: v2
+    appVersion: 26.2.0
     created: "2026-04-08T11:32:22.96722113Z"
     description: A Helm chart for deploying the reference implementation for the User
       Login and Consent Flow in Kubernetes
@@ -13,6 +24,43 @@ entries:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/example-idp-0.61.0/example-idp-0.61.0.tgz
     version: 0.61.0
   hydra:
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-11-27T12:37:37.894855985Z"
+    dependencies:
+    - alias: ory
+      name: ory-commons
+      repository: file://../ory-commons
+      version: 0.1.0
+    - alias: hydra-maester
+      condition: maester.enabled
+      name: hydra-maester
+      repository: file://../hydra-maester
+      version: 0.64.0
+    description: A Helm chart for deploying ORY Hydra in Kubernetes
+    digest: 3e86eff9ab69216540126d0752202fcde65cf3a9a0a7f9fb4bb80ff65d32ed5f
+    home: https://www.ory.sh/
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-hydra.svg
+    keywords:
+    - oauth2
+    - openid-connect
+    - openid
+    - oidc
+    - op
+    - api-security
+    - security
+    maintainers:
+    - email: hi@ory.sh
+      name: ORY Team
+      url: https://www.ory.sh/
+    name: hydra
+    sources:
+    - https://github.com/ory/hydra
+    - https://github.com/ory/k8s
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/hydra-0.64.0-1/hydra-0.64.0-1.tgz
+    version: 0.64.0-1
   - apiVersion: v2
     appVersion: v26.2.0
     created: "2026-04-08T11:32:23.155299038Z"
@@ -89,6 +137,17 @@ entries:
     version: 0.61.0-2
   hydra-maester:
   - apiVersion: v2
+    appVersion: v0.0.42
+    created: "2026-11-27T12:37:38.159982631Z"
+    description: A Helm chart for Kubernetes
+    digest: 46e5eafab0395297f98cb500c01484358fa6855edeb82ce8f8ce0fef570d11ab
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-hydra.svg
+    name: hydra-maester
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/hydra-maester-0.64.0/hydra-maester-0.64.0.tgz
+    version: 0.64.0
+  - apiVersion: v2
     appVersion: v0.0.41
     created: "2026-04-08T11:32:23.296054602Z"
     description: A Helm chart for Kubernetes
@@ -100,6 +159,37 @@ entries:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/hydra-maester-0.61.0/hydra-maester-0.61.0.tgz
     version: 0.61.0
   keto:
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-11-27T12:37:38.371010063Z"
+    dependencies:
+    - alias: ory
+      name: ory-commons
+      repository: file://../ory-commons
+      version: 0.1.0
+    description: Access Control Policies as a Server
+    digest: e16ef351f85554dc5f3c5384df6247a00d3f35162f3ecf737530f0fa5efaf2cb
+    home: https://www.ory.sh/keto/
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-keto.svg
+    keywords:
+    - rbac
+    - hrbac
+    - acl
+    - iam
+    - api-security
+    - security
+    maintainers:
+    - email: hi@ory.sh
+      name: ORY Team
+      url: https://www.ory.sh/
+    name: keto
+    sources:
+    - https://github.com/ory/keto
+    - https://github.com/ory/k8s
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/keto-0.64.0/keto-0.64.0.tgz
+    version: 0.64.0
   - apiVersion: v2
     appVersion: v26.2.0
     created: "2026-04-08T11:32:23.436987871Z"
@@ -132,6 +222,22 @@ entries:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/keto-0.61.0/keto-0.61.0.tgz
     version: 0.61.0
   kratos:
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-11-27T12:37:38.555874721Z"
+    dependencies:
+    - alias: ory
+      name: ory-commons
+      repository: file://../ory-commons
+      version: 0.1.0
+    description: A ORY Kratos Helm chart for Kubernetes
+    digest: 8bc8b801cd98846f79fc12432cf7880b89d6a22cfb45420c3aad7b0e6a0d30ce
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-kratos.svg
+    name: kratos
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/kratos-0.64.0-1/kratos-0.64.0-1.tgz
+    version: 0.64.0-1
   - apiVersion: v2
     appVersion: v26.2.0
     created: "2026-04-08T11:32:23.6005234Z"
@@ -167,6 +273,16 @@ entries:
   kratos-selfservice-ui-node:
   - apiVersion: v2
     appVersion: v0.13.0-4
+    created: "2026-11-27T12:37:38.729228153Z"
+    description: A Helm chart for ORY Kratos's example ui for Kubernetes
+    digest: 0b3a37f101dc006f0c5044500851ccc733d0c0e8530c89677cc8cdf46edd096a
+    name: kratos-selfservice-ui-node
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/kratos-selfservice-ui-node-0.64.0/kratos-selfservice-ui-node-0.64.0.tgz
+    version: 0.64.0
+  - apiVersion: v2
+    appVersion: v0.13.0-4
     created: "2026-04-08T11:32:23.730268549Z"
     description: A Helm chart for ORY Kratos's example ui for Kubernetes
     digest: cc5235f3e91a063160182de756e7167d0db5075b47dd9ce01c2864c084737414
@@ -176,6 +292,40 @@ entries:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/kratos-selfservice-ui-node-0.61.0/kratos-selfservice-ui-node-0.61.0.tgz
     version: 0.61.0
   oathkeeper:
+  - apiVersion: v2
+    appVersion: v26.2.0
+    created: "2026-11-27T12:37:38.891354745Z"
+    dependencies:
+    - alias: oathkeeper-maester
+      condition: maester.enabled
+      name: oathkeeper-maester
+      repository: file://../oathkeeper-maester
+      version: 0.64.0
+    description: A Helm chart for deploying ORY Oathkeeper in Kubernetes
+    digest: 8a04c22a2e0d02ab1a3e50ffe6a181ad6cf80e1d1447d84ee492bf444e70f36d
+    home: https://www.ory.sh/
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-oathkeeper.svg
+    keywords:
+    - zero-trust
+    - beyond-corp
+    - access-control
+    - reverse-proxy
+    - nginx
+    - envoy
+    - ambassador
+    - auth-filter
+    maintainers:
+    - email: office@ory.sh
+      name: ORY Team
+      url: https://www.ory.sh/
+    name: oathkeeper
+    sources:
+    - https://github.com/ory/oathkeeper
+    - https://github.com/ory/k8s
+    type: application
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/oathkeeper-0.64.0/oathkeeper-0.64.0.tgz
+    version: 0.64.0
   - apiVersion: v2
     appVersion: v26.2.0
     created: "2026-04-08T11:32:23.862118443Z"
@@ -211,6 +361,33 @@ entries:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/oathkeeper-0.61.0/oathkeeper-0.61.0.tgz
     version: 0.61.0
   oathkeeper-maester:
+  - apiVersion: v1
+    appVersion: v0.1.14
+    created: "2026-11-27T12:37:39.07873243Z"
+    description: A Helm chart for deploying ORY Oathkeeper Rule Controller in Kubernetes
+    digest: ade7f5a0c0d22f4c0f9aadf357478140355084fd7af366cd1cc3a232870a43a8
+    home: https://www.ory.sh/
+    icon: https://raw.githubusercontent.com/ory/docs/master/docs/static/img/logo-oathkeeper.svg
+    keywords:
+    - zero-trust
+    - beyond-corp
+    - access-control
+    - reverse-proxy
+    - nginx
+    - envoy
+    - ambassador
+    - auth-filter
+    maintainers:
+    - email: office@ory.sh
+      name: ORY Team
+      url: https://www.ory.sh/
+    name: oathkeeper-maester
+    sources:
+    - https://github.com/ory/oathkeeper
+    - https://github.com/ory/k8s
+    urls:
+    - https://github.com/Sisu-Tech/helm-ory/releases/download/oathkeeper-maester-0.64.0/oathkeeper-maester-0.64.0.tgz
+    version: 0.64.0
   - apiVersion: v1
     appVersion: v0.1.13
     created: "2026-04-08T11:32:23.995969935Z"
@@ -249,4 +426,4 @@ entries:
     urls:
     - https://github.com/Sisu-Tech/helm-ory/releases/download/ory-commons-0.1.0/ory-commons-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-08T14:03:37.815347253Z"
+generated: "2026-11-27T12:37:39.078788651Z"
